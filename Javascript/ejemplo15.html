@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var cars = ['Nissan', 'Toyota', 'BMW', 'Hyundai', 'Volvo', 'Kia'];
+        var text = "";
+
+        /** For con Arreglos **/
+        for (let i = 0; i < cars.length; i++)
+            text += cars[i] + "<br>";
+        
+        document.write(text);
+
+
+
+        text = "<br><br>";
+        for(let i = 0; i < 5; i++) 
+            text += "The number is " + i + "<br>";
+        
+        document.write(text);
+
+        /** Ejemplo de tres for con arreglos **/ 
+
+        var pan = ['Blanco', 'Integral', 'Multigranos', 'Artesanal', 'Keto', 'Frances'];
+        var proteina = ['Pollo', 'Res', 'Cerdo', 'Soya'] ;
+        var vegetal = ['Lechuga', 'Tomate', 'Pepino'];
+        
+        var combinacion = "";
+        /** Primer For selecciona el Pan **/
+        for (let i = 0; i < pan.length; i++) {
+
+            /** Segundo For selecciona la proteina **/
+            for (let j = 0; j < proteina.length; j++) {                
+                
+                /** Terce For la selección del Vegetal **/
+                for (let k = 0; k < vegetal.length; k++) {                     
+                    combinacion += "<br /> Pan: " + pan[i] + 
+                                   " - Proteina: " + proteina[j] +
+                                   " - Vegetal: " + vegetal[k] ;                     
+                }
+
+            }
+        }
+
+        document.write(combinacion + "<br/><br/><br/>");
+
+        /** Ciclo infinito **/
+        var opcion;
+        for (let i = 1; true ; i++) {
+
+            opcion = Number(prompt("Ingresa un Numero para repetir, coloca 0 para salir del Ciclo Infinito"));            
+            document.write(i + " Iteraciones - Opción: " + opcion + "<br/>");            
+            
+            if(opcion == 0)
+                break;
+        }
+
+    </script>
+</body>
+</html>

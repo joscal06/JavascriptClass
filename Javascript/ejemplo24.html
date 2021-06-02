@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="DivPadre">
+        <div id="Hijo1">
+            <div id="Nieto1"></div>
+        </div>
+        <div id="Hijo2"></div>
+        <div id="Hijo3"></div>
+    </div>
+
+    <br><br>
+    <hr>
+    <br><br>
+    <script>
+
+        var Manuel = document.getElementById('Hijo2');        
+        var Padre = document.getElementById(Manuel.parentNode.id);
+        
+        
+
+        document.write("<br />" + Padre.id);
+        document.write("<br />" + Padre.textContent);
+        document.write("<br />" + Padre.firstChild);
+
+        document.write("<br /> -- " + Padre.firstChild.id);
+        document.write("<br /> -- " + Padre.firstChild.nodeName);
+        document.write("<br /> -- " + Padre.firstChild.textContent);
+
+        document.write("<br /> -- " + Padre.lastChild.id);
+        document.write("<br /> -- " + Padre.lastChild.nodeName);
+        document.write("<br /> -- " + Padre.lastChild.textContent);        
+
+        document.write("<br />" + Padre.lastChild);
+
+    </script>
+
+</body>
+</html>

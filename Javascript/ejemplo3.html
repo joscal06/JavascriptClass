@@ -1,0 +1,22 @@
+<!-- Ejemplo de acceso al contenido de una etiqueta html -->
+<div style="width: 50%;">
+<h1>Editor de Carta</h1>
+<b>Contenido</b><br>
+<input type="text" id="text1" onkeyup="escritura()" style="width: 80%;" /> 
+<br><br>
+<b>CSS del Parrafo</b><br>
+<textarea id="text2" onkeyup="escritura()" style="width: 80%;" ></textarea>
+<br />
+<br />
+
+<button onclick="document.getElementById('textosalida').style.display = 'none'">Esconder</button>
+<button onclick="document.getElementById('textosalida').style.display = 'inline'">Mostrar</button>
+
+<hr />
+<h1>Texto de Salida de Carta</h1>
+
+<p id="textosalida" ></p>
+
+<script src="editortexto.js"></script>
+
+</div>

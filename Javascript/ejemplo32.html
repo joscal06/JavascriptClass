@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='myCanvas' style="width: 100%; height: 90vh;"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "blue");
+        grd.addColorStop(1, "yellow");
+
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 150, 75);
+        ctx.fillStyle = "#00FF00";
+        ctx.fillRect(150, 75, 300, 150);
+
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(150, 0);
+        ctx.lineTo(150, 150);
+        ctx.lineTo(300, 150);
+        ctx.stroke();
+
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "yellow");
+        ctx.fillStyle = grd;
+        ctx.beginPath();
+        ctx.arc(150, 75, 75, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 10, 50);
+
+
+
+    </script>    
+</body>
+</html>

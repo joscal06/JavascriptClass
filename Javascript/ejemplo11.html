@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var cars = ["Saab", "Volvo", "BMW"]; /** Arregl creado **/
+        var text;
+
+        text = "<ul>";
+        cars.forEach(myFunction);
+        text += "</ul>";
+        text += " <br /> Total de Elementos: "+ cars.length;        
+        document.writeln(text);
+
+        cars.push("Nissan");  /** Añadiendo valores al Arreglo **/
+        cars.push("Toyota");  /** Añadiendo valores al Arreglo **/
+
+        text = "<ul>";
+        cars.forEach(myFunction);
+        text += "</ul>";
+        text += " <br /> Total de Elementos: "+ cars.length;
+        document.writeln(text);
+
+        cars.pop();
+
+        text = "<ul>";
+        cars.forEach(myFunction);
+        text += "</ul>";
+        text += " <br /> Total de Elementos: "+ cars.length;
+        document.writeln(text);        
+
+        
+        /** Forma incorrecta si manejamos arreglos 
+        text += cars[0] + "<br>";
+        text += cars[1] + "<br>";
+        text += cars[2] + "<br>";
+        text += cars[3] + "<br>";
+        text += cars[4] + "<br>";
+        text += cars[5] + "<br>";
+
+        **/
+        
+        text = "<br /><br />";        
+        for (var i = 0; i < cars.length; i++) {
+            text += cars[i] + "<br>";
+
+            if (i == 2) {
+                break;
+            }
+        }
+
+        document.writeln(text);
+
+
+
+
+
+        /** Función de Concatenar **/ 
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+
+    </script>
+</body>
+</html>

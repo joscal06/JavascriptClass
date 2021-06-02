@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación 3</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+        .row
+        {
+            margin-top: 30px;
+        }
+        .rowtd
+        {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;    
+            border: 1px solid gainsboro        
+        }
+        .costo
+        {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row bg-primary">
+            <div class="col-sm-12">
+                <h1>Sistema de Administración de Inventario</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Código:</td>
+                            <td><input id="cod" type="text" class="form-contro" /></td>
+                        </tr>
+                        <tr>
+                            <td>Elemento:</td>
+                            <td><input id="element" type="text"  class="form-contro"/></td>
+                        </tr>
+                        <tr>
+                            <td>Costo:</td>
+                            <td><input id="cost" type="number" step="0.1"  class="form-contro"/></td>
+                        </tr>          
+                        <tr>
+                            <td>Fecha:</td>
+                            <td><input id="date" type="date"  class="form-contro"/></td>
+                        </tr>   
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button onclick="AñadirElemento()" class="btn btn-primary">Añadir a Inventario</button>
+                            </td>
+                        </tr>                                             
+                    </table>
+            </div>
+            <div class="col-sm-8">
+                <table id="inventary" class="table table-bordered">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Costo</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                José Manuel Calderón González 
+                <p id="time"></p>
+            </div>
+            <div class="col-sm-8">
+                <p>Total de Costos: <b id="totalCosto">0.00</b></p>
+                <p>Total de Elemento: <b id="totalElementos">0</b></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var TotalCosto = 0;
+        var TotalElementos = 0;
+
+        /** Script para el tiempo **/
+        setInterval(myTimer, 1000);            
+        function myTimer() 
+        {
+            var d = new Date();
+            document.getElementById("time").innerHTML = d.toLocaleTimeString();
+        }
+
+        /** Script para añadir elemento **/
+        function AñadirElemento()
+        {
+            /** Apuntamos a la Tabla de Inventario **/
+            var tabla = document.getElementById('inventary');
+            
+            /** Creamos los elementos a añadir **/
+            var tr = document.createElement("tr");                
+            var td1 = document.createElement("td");                       
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");  
+            var td5 = document.createElement("td");  
+
+            /** Añadimos clases a los elementos **/
+            td1.className = "rowtd";
+            td2.className = "rowtd";
+            td3.className = "rowtd costo";
+            td4.className = "rowtd";
+            td5.className = "rowtd";
+
+            /** Capturamos los valores del Formulario **/
+            td1.textContent = document.getElementById('cod').value;
+            td2.textContent = document.getElementById('element').value;
+            td3.textContent = "$"+Number(document.getElementById('cost').value).toFixed(2);
+            td4.textContent = document.getElementById('date').value;
+            td5.innerHTML = "<button class='btn btn-danger' onclick='Eliminar(this)'>Eliminar</button>";            
+            td5.innerHTML += "<button class='btn btn-warning' onclick='Editar(this)'>Editar</button>";            
+
+            /** Añadimos los elementos td al elemento tr creado**/
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+
+            /** Añadimos el elemento tr a la tabla de Inventarios **/
+            tabla.appendChild(tr);
+
+            /** Actualizamos Costos **/
+            TotalCosto += Number(document.getElementById('cost').value);
+            document.getElementById('totalCosto').textContent = "$"+ (TotalCosto).toFixed(2);
+
+            /** Actualizamos Elementos **/
+            TotalElementos++;
+            document.getElementById('totalElementos').textContent = (TotalElementos);
+        }
+
+        function Eliminar(button)
+        {
+            
+            let td = button.parentNode; /** Del botón pasamos al TD **/
+            let tr = td.parentNode;     /** Del TD pasamos al TR **/
+
+            /** De la celda del botón saltamos dos celdas atras a costos **/
+            var resta = (td.previousSibling).previousSibling.textContent; 
+            TotalCosto -= Number(resta.replace("$","")); /** Reemplazamos el simbolo de dolar **/
+            
+            /** Removemos el TR - Elimina la Fila **/
+            tr.parentNode.removeChild(tr); 
+
+            /** Imprimimos el Costo Total en 2 digitos **/
+            document.getElementById('totalCosto').textContent = "$"+ (TotalCosto).toFixed(2);                        
+
+            /** Descontamos el elemento y lo imprimimos **/
+            TotalElementos--;
+            document.getElementById('totalElementos').textContent = (TotalElementos);            
+        }
+
+        function Editar(button)
+        {
+            let td = button.parentNode;
+            let tr = td.parentNode;
+            
+            var costo1 = (td.previousSibling).previousSibling.textContent;  
+
+            var codigo = tr.firstChild;
+            codigo.textContent = prompt("Actualización de Código");
+
+            var elemento = (tr.firstChild).nextSibling;
+            elemento.textContent = prompt("Actualización de  elemento");
+            
+            var costo2 = (elemento).nextSibling;
+            costo2.textContent = Number(prompt("Actualización de  costo")); 
+            
+            var fecha = (costo2).nextSibling;
+            fecha.textContent = prompt("Actualización de  fecha");             
+            
+            TotalCosto -= Number(costo1.replace("$",""));
+            TotalCosto += Number(costo2.textContent); 
+
+            costo2.textContent = "$"+ Number(costo2.textContent).toFixed(2); 
+            document.getElementById('totalCosto').textContent = "$"+ (TotalCosto).toFixed(2);                       
+        }        
+    </script>
+
+</body>
+</html>

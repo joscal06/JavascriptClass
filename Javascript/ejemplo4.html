@@ -1,0 +1,49 @@
+<!-- Ocupando innerHTML -->
+<div id="div1">
+</div>
+
+<div id="div2">
+</div>
+
+<script>
+    document.writeln("<div id='div3'><h1>este es el div 3</h1></div>");
+</script>
+
+<div id="div4">
+</div>
+
+<script>
+    
+    var div = document.getElementsByTagName("div");
+    /** document.getElementsByTagName("Nombre de la Etiqueta de HTML")    
+     *  Accedemos a un array de todos los elementos de esa etiqueta. 
+     * **/
+
+    div[0].innerHTML = "<h1>este es el div 1</h1>";
+    div[1].innerHTML = "<h1>este es el div 2</h1>";
+    div[3].innerHTML = "<h1>este es el div 4</h1>";
+    
+    /** Ventanas emergentes **/     
+    /** Ventana 1 - Confirmación **/
+    
+    confirm("¿Seguro que vio este mensaje?");
+
+    /** Ventana 2 - Captura de Datos  **/
+    var name = prompt("Cual es su nombre?");
+
+    /** Ventana 3 - Mensaje emergente **/
+    alert('Este es un mensaje de Alerta, ' + name);
+
+
+    /** Modo Consola **/
+    console.log("Mensaje que aparecerá en la consola");
+
+    
+    // Una Fila de Comentario
+    /** Comentario multiples líneas
+     * Línea 1
+     * Línea 2
+     * Línea 3
+     * **/
+
+</script>

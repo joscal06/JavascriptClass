@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /** Ciclo infinito **/
+        var opcion;
+        var Variable = 0;
+        var log;
+        do{
+
+            opcion = Number(prompt("Menu: "+
+                                   "\n 1 - Para Sumar a la Variable "+
+                                   "\n 2 - Para Restar a la Variable "+
+                                   "\n 3 - Para Multiplicar la Variable"+
+                                   "\n 4 - Para Dividir la Variable"+
+                                   "\n\n 0 - Para Salir"+
+                                   "\n\n Valor de Variable: " + Variable));            
+            
+            switch (opcion) 
+            {
+                case 1:
+                    Variable += Number(prompt("Escriba el numero a Sumar a " + Variable));
+                    log = "Suma a Variable";
+                    break;
+
+                case 2:
+                    Variable -= Number(prompt("Escriba el numero a Restar a " + Variable));
+                    log = "Resta a Variable";
+                    break;
+                    
+                case 3:
+                    Variable *= Number(prompt("Escriba el numero a Multiplicar a " + Variable));
+                    log = "Multiplicación a Variable";
+                    break;
+                    
+                case 4:
+                    Variable /= Number(prompt("Escriba el numero a Dividr a " + Variable));
+                    log = "División a Variable";
+                    break;  
+                    
+                case 0:
+                    alert("Saliendo del Sistema");
+                    log = "Operación Finalizada";
+                    break;                    
+            
+                default:
+                    alert("Opción no valida");
+                    log = "Opción no valida, no se modificó la Variable ";
+                    break;
+            }              
+            document.write("<br />" + log + "- Resultado: " + Variable);
+            
+        } while(opcion != 0);
+    </script>
+</body>
+</html>

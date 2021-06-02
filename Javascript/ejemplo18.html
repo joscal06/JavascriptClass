@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color 
+        {
+            color: red;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+    <p class="colorP" id="parrafo1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>    
+    <br>
+    <form id="form1">
+        <input type="text" class="colorP" name="InputColor" id="input1" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. ">
+        <br><br>
+        
+        <input type="text" name="InputColor" id="input2" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. ">
+        <br><br>
+        
+        <input type="number" name="InputColor" id="input4" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. ">
+        <br><br>    
+        
+        <input type="text" id="input3" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. ">
+        <br><br>
+    </form>
+    <script>
+        
+        var colorP = document.getElementsByClassName('colorP');
+        document.write("<br><br>getElementsByClassName<br>" + typeof(colorP));
+        document.write("<br>" + colorP[0].id);
+        document.write("<br>" + colorP[1].id);
+
+        /**
+        var colorP = {
+                        p:{ 
+                                class: "colorP",
+                                id: "parrafo1",
+                                TextContent: "Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+                            },
+                        input:{ 
+                                type: "text",
+                                class: "colorP",
+                                name: "InputColor",
+                                id: "input1",
+                                value: "Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+                            },
+                    }                                                                
+        **/
+
+        var InputColor = document.getElementsByName('InputColor');
+        document.write("<br><br>getElementsByName<br>" + typeof(InputColor));
+        document.write("<br>" + InputColor[0].id);
+        document.write("<br>" + InputColor[1].id);        
+
+        var Inputs = document.getElementsByTagName('input');
+        document.write("<br><br>getElementsByTagName<br>" + typeof(Inputs));
+        document.write("<br>" + Inputs[0].id);
+        document.write("<br>" + Inputs[1].id);
+        document.write("<br>" + Inputs[2].id);  
+        document.write("<br>" + Inputs[3].id);                   
+
+        var Inputs2 = document.querySelectorAll('input[type=text]')
+        document.write("<br><br>querySelectorAll<br>    " + typeof(Inputs));
+        document.write("<br>" + Inputs2[0].id);
+        document.write("<br>" + Inputs2[1].id);
+        document.write("<br>" + Inputs2[2].id);           
+        
+
+        var input1 = document.getElementById('input1').value;
+        document.write("<br>" +input1);
+
+
+        var Form1 = document.Form1;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+    
+        var edad = Number(prompt("¿Cuantos años tienes?"))
+        
+        /** rango de numero enteros 
+        if (edad > 18) {
+            document.write("Es mayor de Edad");
+        }       
+        else {
+            document.write("Es Menor de Edad");
+        }
+        **/
+
+        var text = (edad >= 18) ? "Es mayor de Edad" : "Es Menor de Edad";         
+        document.writeln(text);
+
+        
+
+        document.writeln("<br/><br/> ");
+        var notaAsignacion = Number(prompt("Ingresa la nota de Evaluación"))
+        
+        /** rango de numero enteros especifica **/
+        if (notaAsignacion >= 7 && notaAsignacion <= 10) {
+            document.write("Aprobado");
+        }
+        else if (notaAsignacion < 7 && notaAsignacion >= 0) {
+            document.write("Reprobado");   
+        }        
+        else {
+            document.write("Nota Invalida");
+        }
+
+    </script>    
+</body>
+</html>

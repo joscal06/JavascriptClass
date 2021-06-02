@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var json =  '{'+
+                    '"employees":['+
+                    '{"firstName":"John", "lastName":"Doe"},'+
+                    '{"firstName":"Anna", "lastName":"Smith"},'+
+                    '{"firstName":"Peter", "lastName":"Jones"}'+
+                    ']'+
+                    '}';
+
+        document.write(json + "<br/><br/>");
+
+        var objeto = JSON.parse(json)
+        document.write(objeto + "<br/>");
+        document.write(objeto.employees + "<br/>");
+                
+        for (var x in objeto.employees) {
+            document.write(x + " " +objeto.employees[x].firstName + "<br/>");
+            document.write(x + " " +objeto.employees[x].lastName + "<br/>");
+        }
+
+        var json2 = JSON.stringify(objeto);
+        document.write("<br/>" + json2 + "<br/><br/>");
+    </script>
+</body>
+</html>

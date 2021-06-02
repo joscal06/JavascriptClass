@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #DivPadre
+        {
+            width: 100%;
+            background-color: tomato;
+            height: 100vh;
+        }
+        #Div1
+        {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background-color: turquoise;
+        }
+    </style>
+    <div id="DivPadre" onclick="mouse()">    
+        <div id="Div1" onmouseout="mouse()">
+        </div>
+    </div>
+
+    <p id="coordenadas" style="font-size: 24; color: tomato;"></p>
+    <script>
+        function mouse()
+        {
+            document.getElementById("coordenadas").textContent = ( event.clientX + " - " + event.clientY);
+            var div1 = document.getElementById("Div1");
+            div1.style.top = (Number(event.clientY) - 25)+"px";
+            div1.style.left = (Number(event.clientX) - 25)+"px";
+            div1.style.backgroundColor = "#"+Math.floor(Math.random()*16777215).toString(16);            
+
+            var div = document.createElement("<div>");
+            div.textContent = prompt("Escribe un texto");
+            div.style.position = "absolute";
+            div.style.width = "100px";
+            div.style.height = "100px";
+            div.style.top = div1.style.top;
+            div.style.left = div1.style.left;
+
+            div.style.backgroundColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+            document.getElementById('DivPadre').appendChild(div);
+        }
+    </script>
+</body>
+</html>

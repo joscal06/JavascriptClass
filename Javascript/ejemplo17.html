@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function sumar(p1){
+            z = document.getElementById('z')
+            z.value = Number(z.value) + Number(p1);         
+        }        
+            
+        function resta(p1){
+            document.getElementById('z').value -= p1;               
+        }            
+
+        function multiplicacion(p1){
+            document.getElementById('z').value *= p1;               
+        }
+            
+        function division(p1){
+            document.getElementById('z').value /= p1;               
+        }    
+        
+    </script>    
+</head>
+<body onload="alert('Ya terminó de cargar todo')">
+
+    Numero 1:
+    <input type="number" class="" name="inputNumber" step="0.1" id="x" value="90">
+    <br><br> 
+
+    <button onclick="sumar(document.getElementById('x').value)">Suma</button>
+    <button onclick="resta(document.getElementById('x').value)">Resta</button>
+    <button onclick="multiplicacion(document.getElementById('x').value)">Multiplicacion</button>
+    <button onclick="division(document.getElementById('x').value)">Division</button>
+
+    <br><br>
+    <input type="number" name="input" step="0.1" id="z">
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body onload="window.print();" >
+
+<p id="demo"></p>
+
+<button onclick="abrir()">Abrir nueva ventana</button>
+<button onclick="cerrar()">Cerrar Nueva Ventana</button>
+
+<script>
+
+var Ventana;
+function abrir()
+{
+    Ventana = window.open('ejemplo24.html');
+}
+
+function cerrar()
+{
+    Ventana.close();
+} 
+
+setInterval(calcularHW, 500);
+
+function calcularHW()
+{
+    var w = window.innerWidth;
+    //var w = document.documentElement.clientWidth;
+    //var w = document.body.clientWidth;
+
+    var h = window.innerHeight;
+    //var h = document.documentElement.clientHeight;
+    //var h = document.body.clientHeight
+
+    var x = document.getElementById("demo");
+    x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
+}
+</script>
+
+</body>
+</html>

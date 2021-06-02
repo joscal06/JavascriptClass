@@ -1,0 +1,56 @@
+<script>
+    var operacion;
+
+    var num1 = Number(prompt("Escribe el numero 1"));
+    var num2 = Number(prompt("Escribe el numero 2"));
+
+    /** Ademas de hacer SUMA tiene la función de Concatenar **/
+    operacion = num1 + num2;
+    document.write("Suma: " + operacion + "<br/>");
+
+    operacion = num1 - num2;
+    document.write("Resta: " + operacion + "<br/>");    
+
+    operacion = num1 * num2;
+    document.write("Multiplicación: " + operacion + "<br/>");        
+
+    operacion = num1 / num2;
+    document.write("División: " + operacion + "<br/>");   
+    
+    operacion = num1 % num2;
+    document.write("Módulo: " + operacion + "<br/><hr /><br/>");       
+
+    /** Operaciones Booleanas **/ 
+    operacion = true && true;
+    document.write("Booleano true y true: " + operacion + "<br/>"); 
+
+    operacion = false && true;
+    document.write("Booleano false y true: " + operacion + "<br/>"); 
+    
+    operacion = true && false;
+    document.write("Booleano true y false: " + operacion + "<br/>");
+    
+    operacion = false && false;
+    document.write("Booleano false y false: " + operacion + "<br/><br/>");    
+
+    operacion = true || true;
+    document.write("Booleano true o true: " + operacion + "<br/>"); 
+
+    operacion = false || true;
+    document.write("Booleano false o true: " + operacion + "<br/>"); 
+    
+    operacion = true || false;
+    document.write("Booleano true o false: " + operacion + "<br/>");
+    
+    operacion = false || false;
+    document.write("Booleano false o false: " + operacion + "<br/><hr /><br/>"); 
+          
+    operacion = num1 == num2;
+    document.write("Operador ==: " + operacion + "<br/>");   
+    
+    operacion = num1 != num2;
+    document.write("Operador !=: " + operacion + "<br/>");       
+
+
+
+</script>

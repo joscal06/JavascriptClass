@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="Main">
+        <h1 id="H11" class="Encabezado1">Formulario 1</h1>
+        <br>
+        Nombre: 
+        <input name="InputText" type="text" id="Campo1" class="form-control" />
+        <br>
+        Apellido
+        <input name="InputText" type="text" id="Campo2" class="form-control" />
+        <br>
+        Edad
+        <input type="number" id="Campo2" class="form-control" />        
+    </div>
+
+    <hr />
+    <script>
+        var main = document.getElementById('Main');
+        var main2 = main;
+
+        document.write(main2.innerHTML);
+
+        main.innerHTML = "<h1>Encabezado 2</h2>";
+        document.write(main.innerHTML);            
+
+        var EtiquetasH1 = document.getElementsByTagName("h1");
+        document.write("<br/><br/>"+ EtiquetasH1.length);
+        EtiquetasH1[0].style.color = "tomato";
+        EtiquetasH1[0].setAttribute("id", "Encabezado1");
+
+        EtiquetasH1[1].style.color = "green";
+        EtiquetasH1[1].className = "form-control";
+        EtiquetasH1[1].setAttribute("id", "Encabezado2");
+        
+        EtiquetasH1[2].style.color = "blue";
+        EtiquetasH1[2].setAttribute("id", "Encabezado3");
+
+
+        var NombresInputText = document.getElementsByName("InputText");
+        document.write("<br/><br/>"+ NombresInputText.length);         
+
+        var ClasesFormControl = document.getElementsByClassName("form-control");
+        document.write("<br/><br/>"+ ClasesFormControl.length);         
+
+    </script>
+
+</body>
+</html>

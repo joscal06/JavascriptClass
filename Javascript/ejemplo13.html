@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /** Ejemplo de Objetos y For In **/ 
+
+        var person = {
+                        Nombres: "José Manuel",
+                        Apellidos: "Calderón González", 
+                        Edad: 30,
+                        Nacionalidad: "Salvadoreño",
+                        Sexo: "Hombre",
+                        ComidaFavorita: ['Pizza', 'Pollo', 'Sushi'],
+                        Carro:
+                        { 
+                            marca: "Hyundai",
+                            modelo: "Accent",
+                            año: 2005
+                        }
+                    };
+
+        var text = "";
+        for (var x in person) {
+            text += x + ": " + person[x]  + "<br />";
+        }
+        document.write(text + "<br /><br />");
+
+
+        document.write(person.Nombres + " " + person.Apellidos);
+        person.ComidaFavorita.forEach(ImprimirComidas);
+
+        function ImprimirComidas(comida)
+        {
+            document.write(" <br />" + comida );
+        }
+
+        var text = "<br /><br />";
+        for (var x in person.Carro) {
+            text += x + ": " + person.Carro[x]  + "<br />";
+        }
+        document.write(text + "<br /><br />");
+
+    </script>
+</body>
+</html>

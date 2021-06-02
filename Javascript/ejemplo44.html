@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        Ingrese el Código <br />
+        <input type="text" id="code" name="code" /><br /><br />
+
+        Ingrese el Nombre <br />
+        <input type="text" id="name" name="name" /><br /><br />
+        
+        Ingrese la Edad <br />
+        <input type="number" id="age" name="age" /><br /><br />
+        
+        <button onclick="CrearObjeto()">Crear Objeto</button>
+        <button onclick="MostrarObjetos()">Mostrar Objetos</button>
+        <button onclick="MostraJSON()">Mostrar JSON</button>    
+
+    <div id="Objetos">
+
+    </div>
+
+    <script>
+        
+        var objPrincipal;
+
+        function CrearObjeto()
+        {
+            var obj = { 
+                        Codigo : document.getElementById('code'). value,
+                        Nombre : document.getElementById('name'). value,
+                        Edad   : document.getElementById('age'). value,
+                      }
+
+            var text = "";
+            for (var x in obj) {
+                text += x + ": " + obj[x]  + "<br />";
+            }    
+            document.getElementById('Objetos').innerHTML = "<br/>Objeto Creado - <br />" + text + "<br />" + JSON.stringify(obj);
+
+            objPrincipal = {objPrincipal , obj};        
+        }
+        
+        function MostrarObjetos()
+        {
+            var text = "";
+            for (var x in objPrincipal[0]) 
+            {
+                text += x + " "+ objPrincipal[0][x] +  "<br />";
+            }     
+            document.getElementById('Objetos').innerHTML = "<br/>Lista de Objetos - <br />" +text;            
+        }
+        
+
+        function MostraJSON()
+        {
+            document.getElementById('Objetos').innerHTML = JSON.stringify(objPrincipal);
+        }
+        
+    </script>
+</body>
+</html>

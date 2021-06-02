@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <p id="demo">Parrafo</p>
+    
+    <script>
+        var day;
+        var NumberDay = new Date().getDay(); 
+        /** new Date().getDay() = Devuelve el numero del deía de la semana que nos encontramos **/
+
+        switch (NumberDay) 
+        {
+            case 0:
+                day = "Domingo";
+                break;
+
+            case 1:
+                day = "Lunes";
+                break;
+
+            case 2:
+                day = "Martes";
+                break;
+
+            case 3:
+                day = "Miércoles";
+                break;
+
+            case 4:
+                day = "Jueves";
+                break;
+
+            case 5:
+                day = "Viernes";
+                break;
+                
+            case  6:
+                day = "Sábado";
+        }
+
+        document.getElementById("demo").innerHTML = "Today is " + day;
+    
+    </script>    
+</body>
+</html>

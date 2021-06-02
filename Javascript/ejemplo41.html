@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-5589-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .mydiv
+        {
+            height: auto;
+        }
+        img
+        {
+            width: 50%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+            
+    </header>
+    <div class="container-fluid">
+        
+        <div class="row mt-5">
+            <div class="text-light col-12 col-sm-6 order-sm-1 col-md-4 order-md-0 bg-primary mydiv">
+                <section>
+                    <article>
+                        <img src="tomate.jpg" /> <p class="display-1">Tomate 1</p><small>Tomate Azul</small>
+                    </article>
+                </section>
+            </div>          
+            <div class="text-light col-12 col-sm-6 order-sm-2 col-md-4 order-md-1 bg-warning mydiv">
+                <img src="tomate.jpg" /> <p class="display-2">Tomate 2</p><small>Tomate Naranja</small>
+            </div>          
+            <div class="text-light d-block d-sm-none col-sm-12 order-sm-0 col-md-4 order-md-2 bg-success mydiv">
+                <img src="tomate.jpg" /> <p class="display-3">Tomate 3</p><small>Tomate Verde</small>
+            </div> 
+        </div> 
+        <div class="row mt-3">
+            <div class="col-12">
+                <p>Use the mark element to <mark>highlight</mark> text.</p>
+
+                <dl>
+                    <dt>Coffee</dt>
+                    <dd>- black hot</dd>
+                    <dt>Milk</dt>
+                    <dd>- white cold</dd>
+                </dl>  
+                  
+                <p>Use <kbd>ctrl + p</kbd> to open the Print dialog box.</p>                
+            </div>
+        </div>    
+        <div class="row mt-5 mb-5 pb-5">
+            <div class="col-6">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>N°</th>
+                        <th>Nombre Completo</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Manuel Calderón</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Roberto Carlos</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jessica Pérez</td>
+                    </tr>                                        
+                </table>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Success</button>
+
+                <button type="button" class="btn btn-outline-primary">Info</button>
+                <button type="button" class="btn btn-outline-success">Danger</button>
+
+            </div>
+        </div> 
+        
+
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Tabs Dinamicas</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Tab1 </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Tab2</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Tab3</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="home" class="container tab-pane active"><br>
+                    <h3>HOME</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                    <h3>Menu 1</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div id="menu2" class="container tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+          
+<!-- The Modal -->
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Ejemplo de Barras Progresivas</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+
+            <!-- Dark Grey -->
+            <div class="progress">
+                <div class="progress-bar bg-dark" style="width:90%">90%</div>
+            </div>
+            <br /><br />
+            <!-- Barra Animada-->
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped" style="width:40%">40%</div>
+            </div>
+            <br /><br />
+            <!-- Barra Multiple-->
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width:40%">
+                    Free Space
+                </div>
+                <div class="progress-bar bg-warning" style="width:10%">
+                    Warning
+                </div>
+                <div class="progress-bar bg-danger" style="width:20%">
+                    Danger
+                </div>
+            </div>
+       
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>  
+
+
+    </div>
+    <footer class="container-fluid">
+        
+    </footer>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="window.history.back()">Retroceder</button>
+    <button onclick="window.history.forward()">Adelantar</button>
+
+    <script>
+        var direccion = window.location.href;
+        document.writeln(direccion);
+
+        var protocolo = window.location.protocol;
+        document.writeln("<br /><br />" + protocolo);        
+
+        
+        if ( confirm("Deseas redirigir a otra página") ) {
+            setInterval(redirigir, 500);
+        }
+        
+
+        function redirigir()
+        {
+            window.location = "ejemplo25.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="mycanvas" onkeydown="RetunrKey(document.ctx, document.posx, document.posy)" ></canvas>
+
+<script>
+
+    var canvas = document.getElementById("mycanvas");
+    var ctx = canvas.getContext("2d");
+    var posx = 0;
+    var posy = 0;
+    
+    ctx.moveTo(posx, posy);
+    ctx.lineTo(posx+10, posy+10);
+    ctx.stroke();
+
+    
+
+    function RetunrKey(ctx, posx, posy) 
+    {
+        // ArrowUp ArrowDown ArrowLeft ArrowRight
+        const key = event.key;
+        var x = 0;
+        var y = 0;
+        alert(key);
+
+        if (key == "ArrowUp") {
+            y = -10;
+        }
+        
+        else if (key == "ArrowDown") {
+            y = 10;
+        }
+
+        else if (key == "ArrowRight") {
+            x = 10
+        }
+
+        else if (key == "ArrowLeft") {
+            x = -10
+        }
+        else
+        {
+            alert("Tecla no Valida")
+        }
+
+        /**
+        ctx.moveTo(posx, posy);
+        ctx.lineTo(posx+x , posy + y);
+        ctx.stroke();
+        **/
+    };
+
+</script>
+</body>
+</html>

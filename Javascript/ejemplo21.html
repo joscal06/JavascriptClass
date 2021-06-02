@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs.js"></script>
+</head>
+<body>
+
+
+    <!-- Script 1 -->
+    <table style="width: 30%; float: left;  border: 1px solid seagreen ; margin-right: 10px;">
+        <tr>
+            <td style="width: 10%;">Contenido</td>
+            <td>TextArea 0<textarea></textarea></td>
+        </tr>
+        <tr>
+            <td><button id="Btn1">Cargar</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="LoadContent"></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById('Btn1').onclick = function()
+        {   
+            var Content = document.getElementsByTagName('textarea');
+            var LoadDiv = document.getElementById('LoadContent');
+
+            LoadDiv.innerHTML += Content[0].value;
+        }            
+    </script>
+
+
+
+
+
+
+    <!-- Script 2 -->
+    <table style="width: 30%; float: left; border: 1px solid tomato; margin-right: 10px;">
+        <tr>
+            <td style="width: 10%;">Etiqueta</td>
+            <td>
+                <select>
+                    <option value="h1">Encabezado</option>
+                    <option value="p">Parrafo</option>
+                    <option value="button">Botón</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 10%;">Color</td>
+            <td>
+                <input id="color" type="color" />
+            </td>
+        </tr>        
+        <tr>
+            <td style="width: 10%;">Contenido</td>
+            <td>TextArea 1<textarea></textarea></td>
+        </tr>
+
+        <tr>
+            <td><button id="Btn2">Cargar</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="LoadContent2"></div>
+            </td>
+        </tr>
+    </table>    
+    <script>
+
+        var boton2 = document.getElementById('Btn2');
+        boton2.addEventListener('click', LoadContentForm);
+        boton2.addEventListener('mouseover', LoadContentForm);
+
+        
+    </script>
+</body>
+</html>
